@@ -4,7 +4,7 @@ const data = [
         cameras: [
             {
                 "model": "Canon EOS R5",
-                "image_url": "./assests/canon/canon EOS R5.webp",
+                "image_url": "JavaScript-Project/assests/canon/canon EOS R5.webp",
                 "description": "A professional-grade mirrorless camera with cutting-edge features.",
                 "features": [
                     "45MP Full-Frame CMOS Sensor",
