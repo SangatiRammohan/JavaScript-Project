@@ -4,7 +4,7 @@ const data = [
         cameras: [
             {
                 "model": "Canon EOS R5",
-                "image_url": "JavaScript-Project/assests/canon/canon EOS R5.webp",
+                "image_url": "/assests/canon/canon EOS R5.webp",
                 "description": "A professional-grade mirrorless camera with cutting-edge features.",
                 "features": [
                     "45MP Full-Frame CMOS Sensor",
@@ -16,7 +16,7 @@ const data = [
             },
             {
                 "model": "Canon EOS R6",
-                "image_url": "./assests/canon/Canon EOS R6.png",
+                "image_url": "/assests/canon/Canon EOS R6.png",
                 "description": "A versatile mirrorless camera for both photography and videography.",
                 "features": [
                     "20.1MP Full-Frame CMOS Sensor",
@@ -40,7 +40,7 @@ const data = [
             },
             {
                 "model": "Canon EOS Rebel T8i",
-                "image_url": "./assests/canon/Canon EOS Rebel T8i.jpg",
+                "image_url": "/assests/canon/Canon EOS Rebel T8i.jpg",
                 "description": "An entry-level DSLR offering advanced features.",
                 "features": [
                     "24.1MP APS-C CMOS Sensor",
