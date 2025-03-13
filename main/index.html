@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpticView</title>
+  <link rel="shortcut icon" href="../assests/bx-camera-movie.svg" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../responsive.css">
+  <link rel="stylesheet" href="../products/data.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css"
+    integrity="sha512-v8QQ0YQ3H4K6Ic3PJkym91KoeNT5S3PnDKvqnwqFD1oiqIl653crGZplPdU5KKtHjO0QKcQ2aUlQZYjHczkmGw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+
+
+  <div class="load">
+    <div class="text">Loading</div>
+    <div class="ring"></div>
+  </div>
+
+
+  <header>
+    <div class="header-main">
+      <div class="header-left">
+        <i class='bx bx-menu-alt-left' id="menu"></i>
+        <h2>OpticView</h2>
+      </div>
+      <div class="header-right">
+        <div class="header-search">
+          <input type="search" placeholder="Search Cameras..." id="search-input">
+          <i class='bx bx-search'></i>
+        </div>
+        <a href="../products/cart.html"><i class='bx bx-cart-alt'></i></a>
+        <div id="count">
+          <div>0</div>
+        </div>
+       <i class='bx bx-user' id="userIcon"></i>
+      </div>
+    </div>
+  </header>
+
+
+
+  <div class="sidebar" id="sidebar">
+    <i class='bx bx-x' id="close"></i>
+    <div class="sidebar-top">
+      <h2> <i class='bx bx-user'></i> &nbsp;  Hello, <span id="helloName">Log in</span> </h2>
+    </div>
+    <hr>
+    <div class="sidebar-middle">
+      <div class="sidebar-middle-1">
+        <div class="sidebar-middle-01" id="one">
+          <i class='bx bx-camera'></i>AllProducts
+        </div>
+        <div class="sidebar-middle-02">
+          <i class='bx bx-plus' id="plus"></i>
+        </div>
+      </div>
+      <div class="side-middle-2">
+        <ul>
+          <li id="two">Canon</li>
+          <li id="three">Nikon</li>
+          <li id="five">Sony</li>
+          <li id="four">Panasonic</li>
+        </ul>
+      </div>
+      <div class="sidebar-middle-2">
+        <a href="../products/cart.html"><i class='bx bxs-shopping-bag'></i> My Orders</a>
+      </div>
+      <!-- <div>
+        <a href=""> <i class='bx bx-heart'></i> Wishlist</a>
+      </div> -->
+      <div>
+        <a href="" > <i class='bx bx-user' id="userIcon"></i> My Account</a>
+      </div>
+      <!-- <div>
+        <a href=""> <i class='bx bx-map-pin'></i> Map Tracking</a>
+      </div> -->
+      <div>
+        <a href="#support"> <i class='bx bx-support'></i> Support</a>
+      </div>
+      <hr>
+    </div>
+
+    <div class="siderbar-bottom">
+      <h3>Follow us on -</h3>
+      <div class="social">
+        <a href=""> <i class='bx bxl-facebook-circle'></i></a>
+        <a href=""> <i class='bx bxl-instagram'></i></a>
+        <a href=""> <i class='bx bxl-twitter'></i></a>
+      </div>
+      <p>© 2024 CameraX. All Rights Reserved.</p>
+    </div>
+  </div>
+
+
+
+
+<!-- scrolling to top -->
+
+  <div href="#" class="Top">
+    <i class='bx bx-chevrons-up'></i>
+  </div>
+
+  <!-- automatic curosoul -->
+
+  <section id="fulldata">
+    <button id="back"><i class='bx bx-log-out-circle'></i></button>
+    <main draggable="false">
+      <div class="curosal-frames">
+        <div id="curosal" class="curosal" draggable="false" aria-selected="false">
+          <div class="curosal-child">
+            <h1>
+              Canon EOS R6
+            </h1>
+            <p>"A compact camera ideal for vloggers and content creators."</p>
+            <h2> <del>&#8377;62,995</del> &nbsp; &#8377; 50,499 </h2>
+          </div>
+          <img src="../assests/banner/Canon EOS R6.png" alt="">
+        </div>
+        <div id="curosal" class="curosal" draggable="false">
+          <div class="curosal-child">
+            <h1>
+              Nikon Z fc
+            </h1>
+            <p>"A retro-inspired mirrorless camera with modern performance."</p>
+            <h2> <del>&#8377;62,995</del>&nbsp; &#8377; 50,499 </h2>
+          </div>
+          <img src="../assests/banner/Nikon Z fc.png" alt="">
+        </div>
+        <div id="curosal" class="curosal" draggable="false">
+          <div class="curosal-child">
+            <h1>
+              Panasonic Lumix ZS200
+            </h1>
+            <p>A compact travel zoom camera with a large sensor."</p>
+            <h2> &#8377;62,995 </h2>
+          </div>
+          <img src="../assests/banner/Panasonic_Lumix_ZS200-removebg-preview.png" alt="">
+        </div>
+        <div id="curosal" class="curosal" draggable="false">
+          <div class="curosal-child">
+            <h1>
+              Sony Alpha ZV-1
+            </h1>
+            <p>"A compact vlogging camera with impressive features"</p>
+            <h2> <del>&#8377;62,995</del> &nbsp;&#8377; 50,499 </h2>
+          </div>
+          <img src="../assests/banner/Sony_Alpha_ZV-1-removebg-preview.png" alt="">
+        </div>
+      </div>
+    </main>
+
+
+    <!--  all products -->
+    <div class="AllProducts">
+      <div id="lines">
+        <span class="line"></span>
+        <h3>Brands</h3>
+        <span class="line"></span>
+      </div>
+
+      <div class="all-brands">
+        <div class="brands" id="canon">
+          <img src="../assests/brands/canon logo.png" alt="">
+ 
+          <p></p>
+        </div>
+        <div class="brands" id="nikon">
+          <img src="../assests/brands/Nikon_logo.png" alt="">
+     
+          <p></p>
+        </div>
+        <div class="brands" id="sony">
+          <img src="../assests/brands/sony_logo_.png" alt="">
+          <p></p>
+        </div>
+        <div class="brands" id="Panasonic">
+          <img src="../assests/brands/panasonic-logo.png" alt="">
+
+          <p></p>
+        </div>
+      </div>
+
+    </div>
+
+<!--  popular products  -->
+    <div class="items">
+      <div id="lines">
+        <span class="line" id="line0"></span>
+        <h3 id="h3">Popular Products</h3>
+        <span class="line" id="line0"></span>
+      </div>
+
+      <div id="allcards">
+        <div class="card-items">
+          <div class="cardSingle">
+
+
+            <!-- Front Content -->
+            <div class="front">
+              <img src="../assests/products/Canon_EOS_M50_Mark_II-removebg-preview.png" alt="">
+              <h4>Canon_EOS_M50_Mark_II</h4>
+              <p>Rating: ⭐</p>
+              <h3>&#8377; 49,899</h3>
+            </div>
+
+            <!-- Back Content -->
+            <div class="back">
+              <h4>Product Details</h4>
+              <span></span>
+              <p>Canon EOS RP is a lightweight, full-frame mirrorless camera. Ideal for enthusiasts and professionals.
+              </p>
+            </div>
+          </div>
+
+          <div class="cardSingle">
+            <!-- Front Content -->
+            <div class="front">
+              <img src="../assests/products/Canon_EOS_M50_Mark_II-removebg-preview.png" alt="">
+              <h4>Canon_EOS_M50_Mark_II</h4>
+              <p>Rating: ⭐</p>
+              <h3>&#8377; 49,899</h3>
+            </div>
+
+            <!-- Back Content -->
+            <div class="back">
+              <h4>Product Details</h4>
+              <span></span>
+              <p>Canon EOS RP is a lightweight, full-frame mirrorless camera. Ideal for enthusiasts and professionals.
+              </p>
+            </div>
+          </div>
+
+          <div class="cardSingle">
+            <!-- Front Content -->
+            <div class="front">
+              <img src="../assests/products/Nikon Z50.png" alt="">
+              <h4>Nikon Z50</h4>
+              <p>Rating: ⭐</p>
+              <h3>&#8377; 49,899</h3>
+            </div>
+
+            <!-- Back Content -->
+            <div class="back">
+              <h4>Product Details</h4>
+              <span></span>
+              <p>Canon EOS RP is a lightweight, full-frame mirrorless camera. Ideal for enthusiasts and professionals.
+              </p>
+            </div>
+          </div>
+
+          <div class="cardSingle">
+
+            <!-- Front Content -->
+            <div class="front">
+              <img src="../assests/products/Nikon Z6 II.webp" alt="">
+              <h4>Nikon Z6 II</h4>
+              <p>Rating: ⭐</p>
+              <h3>&#8377; 49,899</h3>
+            </div>
+
+            <!-- Back Content -->
+            <div class="back">
+              <h4>Product Details</h4>
+              <span></span>
+              <p>Canon EOS RP is a lightweight, full-frame mirrorless camera. Ideal for enthusiasts and professionals.
+              </p>
+            </div>
+          </div>
+          <div class="cardSingle">
+
+            <!-- Front Content -->
+            <div class="front">
+              <img src="../assests/products/Panasonic Lumix S1.png" alt="">
+              <h4>Panasonic Lumix S1</h4>
+              <p>Rating: ⭐</p>
+              <h3>&#8377; 49,899</h3>
+            </div>
+
+            <!-- Back Content -->
+            <div class="back">
+              <h4>Product Details</h4>
+              <span></span>
+              <p>Canon EOS RP is a lightweight, full-frame mirrorless camera. Ideal for enthusiasts and professionals.
+              </p>
+            </div>
+
+          </div>
+          <div class="cardSingle">
+            <!-- Front Content -->
+            <div class="front">
+              <img src="../assests/products/Panasonic Lumix S5 II.png" alt="">
+              <h4>Panasonic Lumix S5 II</h4>
+              <p>Rating: ⭐</p>
+              <h3>&#8377; 49,899</h3>
+            </div>
+
+            <!-- Back Content -->
+            <div class="back">
+              <h4>Product Details</h4>
+              <span></span>
+              <p>Canon EOS RP is a lightweight, full-frame mirrorless camera. Ideal for enthusiasts and professionals.
+              </p>
+            </div>
+          </div>
+
+
+
+          <div class="cardSingle">
+
+            <!-- Front Content -->
+            <div class="front">
+              <img src="../assests/products/Sony Alpha 7 IV.jpeg.png" alt="">
+              <h4>Sony Alpha 7 IV</h4>
+              <p>Rating: ⭐</p>
+              <h3>&#8377; 49,899</h3>
+            </div>
+
+            <!-- Back Content -->
+            <div class="back">
+              <h4>Product Details</h4>
+              <span></span>
+              <p>Canon EOS RP is a lightweight, full-frame mirrorless camera. Ideal for enthusiasts and professionals.
+              </p>
+            </div>
+          </div>
+          <div class="cardSingle">
+
+            <!-- Front Content -->
+            <div class="front">
+              <img src="../assests/products/Sony_Alpha_ZV-1-removebg-preview.png" alt="">
+              <h4>Sony_Alpha_ZV-1-removebg-preview</h4>
+              <p>Rating: ⭐</p>
+              <h3>&#8377; 49,899</h3>
+            </div>
+
+            <!-- Back Content -->
+            <div class="back">
+              <h4>Product Details</h4>
+              <span></span>
+              <p>Canon EOS RP is a lightweight, full-frame mirrorless camera. Ideal for enthusiasts and professionals.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="banner">
+      <div class="child-banner">
+        <h1>Pixel Perfect. Splash-proof</h1>
+        <p>A new bench mark in optical performance -</p>
+        <p>From <strong>&#8377; 49,999</strong></p>
+        <button id="btn-view"> View More <i class='bx bx-right-arrow-alt'></i></button>
+      </div>
+      <img src="../assests/banner/banner.jpg" alt="">
+    </div>
+
+
+    <section class="reviews">
+      <div id="lines">
+        <span class="line"></span>
+        <h3>Products Reviews</h3>
+        <span class="line"></span>
+      </div>
+      <div class="carousel-container">
+        <button class="carousel-btn left-btn" id="prevBtn"><i class='bx bx-chevron-left'></i></button>
+        <div class="brand-reviews">
+          <div class="review">
+            <img src="../assests/review/rev1.jpg" alt="">
+            <div class="review-item">
+              <div class="title-1">
+                <h5>Review Title 1</h5>
+                <h6>Subtitle 1</h6>
+              </div>
+              <div class="title-2">
+                <b>Details about review 1</b>
+                <a href="#">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="review">
+            <img src="../assests/review/Nikon COOLPIX P1000.png" alt="">
+            <div class="review-item">
+              <div class="title-1">
+                <h5>Review Title 1</h5>
+                <h6>Subtitle 1</h6>
+              </div>
+              <div class="title-2">
+                <b>Details about review 1</b>
+                <a href="#">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="review">
+            <img src="../assests/review/rev2.jpg" alt="">
+            <div class="review-item">
+              <div class="title-1">
+                <h5>Review Title 1</h5>
+                <h6>Subtitle 1</h6>
+              </div>
+              <div class="title-2">
+                <b>Details about review 1</b>
+                <a href="#">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="review">
+            <img src="../assests/review/rev3.jpg" alt="">
+            <div class="review-item">
+              <div class="title-1">
+                <h5>Review Title 1</h5>
+                <h6>Subtitle 1</h6>
+              </div>
+              <div class="title-2">
+                <b>Details about review 1</b>
+                <a href="#">Read More</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <button class="carousel-btn right-btn" id="nextBtn"><i class='bx bx-chevron-right'></i></button>
+      </div>
+    </section>
+
+
+    <div class="support" id="support">
+
+      <div id="lines">
+        <span class="line"></span>
+        <h3>Support</h3>
+        <span class="line"></span>
+      </div>
+
+
+
+      <div class="support-card">
+        <div class="help">
+          <img src="../assests/Reviews/free-shipping.png" alt="">
+          <h4> Fast Shipping</h4>
+          <p> Free and Fast Delivery</p>
+        </div>
+        <div class="help">
+          <img src="../assests/Reviews/medal.png" alt="">
+          <h4> Genuine Products</h4>
+          <p>Genuine & Original Products</p>
+        </div>
+        <div class="help">
+          <img src="../assests/Reviews/shield.png" alt="">
+          <h4> 100% Secure Checkout</h4>
+          <p> UPI | Netbanking | EMI</p>
+        </div>
+        <div class="help">
+          <img src="../assests/Reviews/customer-service.png" alt="">
+          <h4>Online Support </h4>
+          <p> Dedicated Online Support</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    <div class="footer">
+      <div id="lines">
+        <span class="line"></span>
+        <h3>OpticView</h3>
+        <span class="line"></span>
+      </div>
+
+      <div class="down">
+        <div class="down-card">
+          <h2>Useful Links</h2>
+          <h5><a href="">FAQs</a></h5>
+          <h5><a href="">Help & Support</a></h5>
+          <h5><a href="">Terms & Conditions</a></h5>
+          <h5><a href="">Cancellations & Refunds</a></h5>
+        </div>
+        <div class="down-card-1">
+          <div class="social">
+            <a href=""> <i class='bx bxl-facebook-circle'></i></a>
+            <a href=""> <i class='bx bxl-instagram'></i></a>
+            <a href=""> <i class='bx bxl-twitter'></i></a>
+          </div>
+
+          <span class="ver-line">
+
+          </span>
+
+          <h3 style="color: #999;">CONNECT WITH US</h3>
+          <div class="subscribe">
+            <form action="">
+              <input type="email" placeholder="Enter your Email">
+              <button id="subscribe"> SUBSCRIBE</button>
+            </form>
+          </div>
+        </div>
+        <div class="down-card-2">
+          <h2>Quick Links</h2>
+          <h5><a href="">Track Order</a></h5>
+          <h5><a href="">Privacy Policy</a></h5>
+          <h5><a href="">Shipping Rates</a></h5>
+        </div>
+      </div>
+
+      <div class="rights">
+        <p>© 2024 OpticView. All Rights Reserved.</p>
+        <p>Designed & Built by | <strong style="color: #ccc;">Rammohan</strong></p>
+      </div>
+
+
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+ 
+  <script src="../data.js"></script>
+  <!-- <script src="../data1.js"></script> -->
+</body>
+
+</html>
