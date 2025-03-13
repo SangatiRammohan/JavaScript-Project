@@ -4,7 +4,7 @@ const data = [
         cameras: [
             {
                 "model": "Canon EOS R5",
-                "image_url": "assests/canon/canon EOS R5.webp",
+                "image_url": "/JavaScript-Project/assests/canon/canon EOS R5.webp",
                 "description": "A professional-grade mirrorless camera with cutting-edge features.",
                 "features": [
                     "45MP Full-Frame CMOS Sensor",
@@ -16,7 +16,7 @@ const data = [
             },
             {
                 "model": "Canon EOS R6",
-                "image_url": "/assests/canon/Canon EOS R6.png",
+                "image_url": "JavaScript-Project/assests/canon/Canon EOS R6.png",
                 "description": "A versatile mirrorless camera for both photography and videography.",
                 "features": [
                     "20.1MP Full-Frame CMOS Sensor",
@@ -28,7 +28,7 @@ const data = [
             },
             {
                 "model": "Canon EOS 90D",
-                "image_url": "/assests/canon/Canon EOS 90D.jpg",
+                "image_url": "./JavaScript-Project/assests/canon/Canon EOS 90D.jpg",
                 "description": "A DSLR with high resolution and fast autofocus.",
                 "features": [
                     "32.5MP APS-C CMOS Sensor",
