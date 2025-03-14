@@ -307,105 +307,7 @@
     font-size: 20px;
   }
   
-  /* Login and Signup Forms */
-  /* #font-back {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 2000;
-  }
   
-  .signup {
-    background-color: var(--white);
-    border-radius: 10px;
-    padding: 30px;
-    width: 400px;
-    max-width: 90%;
-    box-shadow: var(--shadow);
-  }
-  
-  .signup .close {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-  
-  .signup .close h2 {
-    color: var(--primary-color);
-  }
-  
-  .signup .close i {
-    font-size: 24px;
-    cursor: pointer;
-    color: var(--text-color);
-  }
-  
-  .signup hr {
-    margin-bottom: 20px;
-    border: none;
-    height: 1px;
-    background-color: var(--light-text);
-    opacity: 0.5;
-  }
-  
-  .signup form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .signup form input {
-    padding: 10px 15px;
-    border: 1px solid var(--light-text);
-    border-radius: 5px;
-    outline: none;
-    font-size: 14px;
-  }
-  
-  .signup form input:focus {
-    border-color: var(--primary-color);
-  }
-  
-  .signup form p {
-    font-size: 12px;
-    color: var(--light-text);
-  }
-  
-  .signup .btn {
-    background-color: var(--primary-color);
-    color: var(--white);
-    border: none;
-    padding: 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.2s ease;
-  }
-  
-  .signup .btn:hover {
-    background-color: #15204d;
-  }
-  
-  .signup-down {
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  .signup-down button {
-    background: none;
-    border: none;
-    color: var(--primary-color);
-    font-weight: 600;
-    cursor: pointer;
-  }
-   */
   /* Main Carousel */
   main {
     width: 100%;
@@ -416,8 +318,7 @@
   .curosal-frames {
     display: flex;
     width: 400%;
-   
-    transition: transform 0.5s ease;
+    transition: transform 0.6s ease;
   }
   
   .curosal {
@@ -427,7 +328,7 @@
     justify-content: space-around;
     padding: 20px 50px;
     margin: 30px;
-    background-color: var(--white);
+    /* background-color: var(--card-background); */
   }
   
   .curosal-child {
@@ -698,6 +599,8 @@
   
   .brand-reviews {
     display: flex;
+    justify-content: center;
+    align-items: center;
     overflow-x: hidden;
     scroll-behavior: smooth;
     padding: 20px 0;
@@ -1407,3 +1310,42 @@
       height: 40px;
     }
   }
+
+
+
+
+
+
+
+
+
+  .back-button {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    padding: 10px 15px;
+    background-color:#1f6feb;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    color: white;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-button i {
+    font-size: 20px;
+}
+
+.back-button:hover {
+    background-color:var(--primary-color);
+    transform: scale(1.05);
+}
+
+.back-button:active {
+    background-color: #d0d0d0;
+    transform: scale(0.95);
+}

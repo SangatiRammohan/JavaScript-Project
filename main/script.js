@@ -114,37 +114,71 @@ function updateSlidePosition() {
 
 startAutoSlide();
 
-// Manual carousel controls (if added)
-curosal.addEventListener('mouseenter', () => {
-  clearInterval(autoSlideInterval);
-});
+//btn carousel
+document.addEventListener('DOMContentLoaded', function() {
+    // Get carousel elements
+    const carousel = document.querySelector('.brand-reviews');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const reviews = document.querySelectorAll('.review');
+    
+    let currentIndex = 0;
+    let reviewsToShow = 3; 
+    
+    function updateReviewsToShow() {
+      if (window.innerWidth < 768) {
+        reviewsToShow = 1;
+      } else if (window.innerWidth < 1024) {
+        reviewsToShow = 2;
+      } else {
+        reviewsToShow = 3;
+      }
+      updateCarousel();
+    }
+    
+    // Initial check
+    updateReviewsToShow();
+    
 
-curosal.addEventListener('mouseleave', () => {
-  startAutoSlide();
-});
+    window.addEventListener('resize', updateReviewsToShow);
+    
+   
+    function updateCarousel() {
 
-// Reviews carousel
-// prevBtn.addEventListener('click', () => {
-//   reviewsPosition = Math.max(reviewsPosition - 1, 0);
-//   updateReviewsPosition();
-// });
-
-// nextBtn.addEventListener('click', () => {
-//   const maxPosition = Math.floor(brandReviews.children.length - brandReviews.offsetWidth / 330);
-//   reviewsPosition = Math.min(reviewsPosition + 1, maxPosition);
-//   updateReviews})
-
-
-
-  prevBtn.addEventListener('click', () => {
-    reviewsPosition = Math.max(reviewsPosition - 1, 0);
-    updateReviewsPosition();
-  });
-  
-  nextBtn.addEventListener('click', () => {
-    const maxPosition = Math.floor(brandReviews.children.length - brandReviews.offsetWidth / 330);
-    reviewsPosition = Math.min(reviewsPosition + 1, maxPosition);
-    updateReviewsPosition();
+      reviews.forEach(review => {
+        review.style.display = 'none';
+      });
+      
+   
+      for(let i = 0; i < reviewsToShow; i++) {
+        const indexToShow = (currentIndex + i) % reviews.length;
+        reviews[indexToShow].style.display = 'block';
+      }
+      
+      // Update button states
+      updateButtonStates();
+    }
+    
+   
+    function updateButtonStates() {
+      prevBtn.disabled = false;
+      nextBtn.disabled = false;
+    }
+    
+    // Previous button click handler
+    prevBtn.addEventListener('click', function() {
+      currentIndex = (currentIndex - 1 + reviews.length) % reviews.length;
+      updateCarousel();
+    });
+    
+    // Next button click handler
+    nextBtn.addEventListener('click', function() {
+      currentIndex = (currentIndex + 1) % reviews.length;
+      updateCarousel();
+    });
+    
+    // Initialize carousel
+    updateCarousel();
   });
 
 

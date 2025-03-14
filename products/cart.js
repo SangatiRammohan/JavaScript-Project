@@ -12,11 +12,16 @@ function renderCartItems() {
         totalPriceElement.innerHTML = 'Total Price: <span>&#8377;</span> 0';
         return;
     }
-    let quantity =0
+    
     let totalPrice = 0;
     cartItems.forEach((item, index) => {
+        // Initialize quantity if it doesn't exist
+        if (!item.quantity) {
+            item.quantity = 1;
+        }
+        
         // Ensure item price and quantity are numbers, and calculate the price for this item
-        const itemPrice = parseFloat(item.price) * (Number(item.quantity) || 1); // Ensures quantity is a valid number
+        const itemPrice = parseFloat(item.price) * Number(item.quantity);
         totalPrice += itemPrice;
 
         const cartItemElement = document.createElement('div');
@@ -28,7 +33,7 @@ function renderCartItems() {
                 <div class="cart-item-price">&#8377;${item.price}</div>
                 <div class="cart-item-quantity">
                     <button class="quantity-btn decrease" data-index="${index}">-</button>
-                    <span class="quantity-value">${quantity}</span>
+                    <span class="quantity-value">${item.quantity}</span>
                     <button class="quantity-btn increase" data-index="${index}">+</button>
                 </div>
             </div>
@@ -50,9 +55,10 @@ function updateCart() {
 }
 
 cartContainer.addEventListener('click', function(event) {
+    // Handle remove item button click
     if (event.target.closest('.remove-item')) {
         const button = event.target.closest('.remove-item');
-        const index = button.dataset.index;
+        const index = parseInt(button.dataset.index);
 
         Swal.fire({
             title: 'Remove item?',
@@ -75,8 +81,9 @@ cartContainer.addEventListener('click', function(event) {
         });
     }
 
+    // Handle decrease quantity button click
     if (event.target.classList.contains('decrease')) {
-        const index = event.target.dataset.index;
+        const index = parseInt(event.target.dataset.index);
         if (cartItems[index].quantity > 1) {
             cartItems[index].quantity--;
             updateCart();
@@ -98,8 +105,13 @@ cartContainer.addEventListener('click', function(event) {
         }
     }
 
+    // Handle increase quantity button click
     if (event.target.classList.contains('increase')) {
-        const index = event.target.dataset.index;
+        const index = parseInt(event.target.dataset.index);
+        // Ensure quantity property exists
+        if (!cartItems[index].quantity) {
+            cartItems[index].quantity = 1;
+        }
         cartItems[index].quantity++;
         updateCart();
     }
@@ -126,9 +138,11 @@ checkoutButton.addEventListener('click', function() {
     });
 
     setTimeout(() => {
-        // Ensure total price is extracted correctly, avoiding 'NaN' by stripping out unwanted characters
-        const totalPriceText = totalPriceElement.textContent.replace('Total Price: ₹', '').trim();
-        const totalPrice = parseFloat(totalPriceText);
+        // Calculate total price directly from cart items to avoid parsing issues
+        let totalPrice = 0;
+        cartItems.forEach(item => {
+            totalPrice += parseFloat(item.price) * Number(item.quantity || 1);
+        });
 
         if (isNaN(totalPrice) || totalPrice <= 0) {
             Swal.fire({

@@ -506,47 +506,6 @@ const data = [
 let bodyData = document.getElementById("fulldata");
 let footer = document.querySelector(".footer");
 
-// // Create back button and add it to the page
-// const headerSection = document.querySelector("fulldata") || document.body;
-// const backButton = document.createElement("button");
-// backButton.id = "back";
-// backButton.className = "back-button";
-// backButton.innerHTML = '<i class="bx bx-arrow-back"></i> Back to Main Page';
-
-// // Style the back button
-// backButton.style.position = "fixed";
-// backButton.style.top = "20px";
-// backButton.style.left = "20px";
-// backButton.style.zIndex = "1000";
-// backButton.style.padding = "10px 15px";
-// backButton.style.backgroundColor = "#3498db";
-// backButton.style.color = "white";
-// backButton.style.border = "none";
-// backButton.style.borderRadius = "5px";
-// backButton.style.cursor = "pointer";
-// backButton.style.display = "flex";
-// backButton.style.alignItems = "center";
-// backButton.style.gap = "5px";
-// backButton.style.fontSize = "16px";
-
-// // Add hover effect
-// backButton.addEventListener("mouseover", function() {
-//     this.style.backgroundColor = "#2980b9";
-// });
-
-// backButton.addEventListener("mouseout", function() {
-//     this.style.backgroundColor = "#3498db";
-// });
-
-// // Insert the back button at the beginning of the header or body
-// // headerSection.insertBefore(backButton, headerSection.firstChild);
-
-// // Add click event to the back button
-// backButton.addEventListener("click", function() {
-//     window.location.href = "/index.html"; // Replace with your main page URL
-// });
-// document.body.append(backButton)
-
 // Initialize search functionality
 let searchBar = document.getElementById("search-input");
 
@@ -569,6 +528,17 @@ function displayBrandCards(filteredData) {
     bodyData.style.justifyContent = "center";
     bodyData.style.alignItems = "center";
     bodyData.style.gap = "20px";
+
+
+    const backButton = document.createElement("button");
+    backButton.classList.add("back-button");
+    backButton.innerHTML = '<i class="bx bx-log-out-circle"></i>';
+    backButton.addEventListener("click", () => {
+        window.location.href = "../main/index.html";
+    });
+    
+
+    bodyData.appendChild(backButton);
 
     filteredData.forEach(brand => {
         brand.cameras.forEach(camera => {
@@ -640,36 +610,62 @@ function displayBrandCards(filteredData) {
             });
 
             //buy now functionlity
-            card.querySelector(".buy-now").addEventListener("click", () => {
 
-                const isLoggedIn = localStorage.getItem("loggedIn") === "true";
-
-                if (isLoggedIn) {
-                    Swal.fire({
-                        position: "center",
-                        icon: "error",
-                        title: "Please log in to purchase",
-                        text: "You need to be logged in to buy products",
-                        showConfirmButton: true,
-                        confirmButtonText: "Log in now"
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-
-                            showAuthOverlay();
-                        }
-                    });
-                    return;
-                }
-                Swal.fire({
-                    title: "Do you want to Buy this Item?",
-                    showCancelButton: true,
-                    confirmButtonText: "Yes",
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        window.location.href = "/payment/payment.html";
+document.querySelectorAll('.buy-now').forEach(button => {
+    button.addEventListener('click', function() {
+    
+        const isLoggedIn = localStorage.getItem("isloggedin") === "true";
+        
+        if (isLoggedIn) {
+          
+            Swal.fire({
+                position: "center",
+                icon: "error",
+                title: "Please log in to purchase",
+                text: "You need to be logged in to buy products",
+                showConfirmButton: true,
+                confirmButtonText: "Log in now"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                 
+                    if (typeof showAuthOverlay === 'function') {
+                        showAuthOverlay();
+                    } else {
+                     
+                        window.location.href = "/login.html";
                     }
-                });
+                }
             });
+        } else {
+            
+            const productCard = this.closest('.imagesRight').parentElement;
+            const productModel = productCard.querySelector('h2').textContent;
+            const productPrice = productCard.querySelector('h1').textContent.replace('Price: ₹ ', '');
+            const productImage = productCard.querySelector('.imagesDiv img').src;
+            
+      
+            let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            
+          
+            const product = {
+                id: Date.now().toString(), 
+                model: productModel,
+                price: productPrice,
+                image: productImage,
+                quantity: 1
+            };
+            
+        
+            cart.push(product);
+            
+          
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
+           
+            window.location.href = "/products/cart.html";
+        }
+    });
+});
 
 
 

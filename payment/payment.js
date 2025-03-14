@@ -1,180 +1,124 @@
-// // Load price from sessionStorage on page load
-// window.onload = function () {
-//     const selectedItems = JSON.parse(sessionStorage.getItem("selectedItem"));
 
-//     // Calculate total price for multiple or single items
-//     if (Array.isArray(selectedItems)) {
-//         const total = selectedItems.reduce((sum, item) => sum + item.price, 0);
-//         document.getElementById("amount").value = `$${total.toFixed(2)}`;
-//     }
-//     else if (selectedItems && selectedItems.price) {
-//         document.getElementById("amount").value = `$${selectedItems.price.toFixed(2)}`;
-//     } else {
-//         document.getElementById("amount").value = "$0.00";
-//     }
-// };
-
-// // Handle form submission
-// document.getElementById("payment-form").addEventListener("submit", function (event) {
-//     event.preventDefault(); // Prevent default form submission
-
-//     // Collect form data
-//     const cardHolder = document.getElementById("card-holder").value;
-//     const cardNumber = document.getElementById("card-number").value;
-//     const expiryDate = document.getElementById("expiry-date").value;
-//     const cvv = document.getElementById("cvv").value;
-//     const amount = document.getElementById("amount").value;
-
-//     // Basic validation
-//     if (!cardHolder || !cardNumber || !expiryDate || !cvv) {
-//         Swal.fire({
-//             title: "Error",
-//             text: "Please fill out all required fields.",
-//             icon: "error",
-//             confirmButtonColor: "#45a049"
-//         });
-//         return;
-//     }
-
-//     // Simple card number validation (just checking if it's numeric)
-//     if (!/^\d+$/.test(cardNumber)) {
-//         Swal.fire({
-//             title: "Error",
-//             text: "Card number should contain only numbers.",
-//             icon: "error",
-//             confirmButtonColor: "#45a049"
-//         });
-//         return;
-//     }
-
-//     // Simple CVV validation (must be 3 digits)
-//     if (!/^\d{3}$/.test(cvv)) {
-//         Swal.fire({
-//             title: "Error",
-//             text: "CVV must be 3 digits.",
-//             icon: "error",
-//             confirmButtonColor: "#45a049"
-//         });
-//         return;
-//     }
-
-//     // Save data to sessionStorage
-//     sessionStorage.setItem("paymentDetails", JSON.stringify({
-//         cardHolder: cardHolder,
-//         cardNumber: cardNumber,
-//         amount: amount
-//     }));
-
-//     // Show success message and redirect
-//     Swal.fire({
-//         title: "Payment Successful",
-//         icon: "success",
-//         html: `Payment of ${amount} was successful! Thank you, ${cardHolder}.`,
-//         showCloseButton: true,
-//         focusConfirm: false,
-//         confirmButtonText: `<i class="fa fa-thumbs-up"></i> Ok!`,
-//         confirmButtonColor: "#45a049"
-//     }).then((result) => {
-//         if (result.isConfirmed) {
-//             // Clear cart data if it exists
-//             if (localStorage.getItem('cartItems')) {
-//                 localStorage.removeItem('cartItems');
-//             }
-            
-//             // Redirect to home page
-//             window.location.href = "../main/index.html";
-//         }
-//     });
-// });
-
-// // Format card number to add spaces (optional enhancement)
-// document.getElementById("card-number").addEventListener("input", function(e) {
-//     // Remove non-digit characters
-//     let value = this.value.replace(/\D/g, '');
+document.addEventListener('DOMContentLoaded', function() {
+    // Get amount from localStorage
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    const checkoutAmount = localStorage.getItem('checkoutAmount');
     
-//     // Check if value has changed to avoid infinite loop
-//     if (value === this.rawValue) return;
-//     this.rawValue = value;
+    // Calculate total if not already stored in checkoutAmount
+    let totalAmount = 0;
     
-//     // Limit to 12 digits
-//     value = value.substring(0, 12);
-    
-//     this.value = value;
-// });
-
-
- // Load price from sessionStorage on page load
- window.onload = function () {
-    const selectedItems = JSON.parse(sessionStorage.getItem("selectedItem"));
-
-    // Calculate total price for multiple or single items
-    if (Array.isArray(selectedItems)) {
-        const total = selectedItems.reduce((sum, item) => sum + item.price, 0);
-        document.getElementById("amount").value = `${total.toFixed(2)}`;
-    }
-    else if (selectedItems && selectedItems.price) {
-        document.getElementById("amount").value = `${selectedItems.price.toFixed(2)}`;
+    if (checkoutAmount) {
+        totalAmount = checkoutAmount;
     } else {
-        document.getElementById("amount").value = "$0.00";
+       
+        totalAmount = cart.reduce((total, item) => {
+            const price = parseFloat(item.price.toString().replace(/[^\d.]/g, ''));
+            return total + (price * (item.quantity || 1));
+        }, 0);
     }
-};
+    
+  
+    const amountInput = document.getElementById('amount');
+    amountInput.value = `₹ ${totalAmount.toFixed(2)}`;
 
-// Handle form submission
-document.getElementById("payment-form").addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    const cardHolder = document.getElementById("card-holder").value;
-    const cardNumber = document.getElementById("card-number").value;
-    const expiryDate = document.getElementById("expiry-date").value;
-    const cvv = document.getElementById("cvv").value;
-    const amount = document.getElementById("amount").value;
-
-    // Validate all fields
-    if (!cardHolder || !cardNumber || !expiryDate || !cvv) {
-        alert("Please fill out all required fields.");
-        return;
-    }
-
-    // Simulate successful payment
-    // alert(`Payment of ${amount} was successful! Thank you, ${cardHolder}.`);
-
-    Swal.fire({
-        title: "Payment successfull",
-        icon: "success",
-        html: `Payment of ${amount} was successful! Thank you, ${cardHolder}.`,
-        showCloseButton: true,
-        // showCancelButton: true,
-        focusConfirm: false,
-        confirmButtonText: `<i class="fa fa-thumbs-up"></i> Ok!`,
-
-    }).then((result) => {
-        if (result.isConfirmed) {
-            window.location.href="../main/index.html";
+    const cardNumberInput = document.getElementById('card-number');
+    cardNumberInput.addEventListener('input', function(e) {
+        let value = e.target.value.replace(/\D/g, '');
+        
+        if (value.length > 0) {
+            value = value.match(new RegExp('.{1,4}', 'g')).join(' ');
         }
+        
+        e.target.value = value;
     });
+    
+    // Handle form submission
+    const paymentForm = document.getElementById('payment-form');
+    paymentForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+ 
+        const cardHolder = document.getElementById('card-holder').value;
+        const cardNumber = document.getElementById('card-number').value.replace(/\s/g, '');
+        const expiryDate = document.getElementById('expiry-date').value;
+        const cvv = document.getElementById('cvv').value;
+        
+       
+        if (cvv.length !== 3) {
+            showError('Please enter a valid 3-digit CVV');
+            return;
+        }
+        
+     
+        const currentDate = new Date();
+        const currentYear = currentDate.getFullYear();
+        const currentMonth = currentDate.getMonth() + 1;
+        
 
-});
+        const [expYear, expMonth] = expiryDate.split('-').map(Number);
+        
+ 
+        if (expYear < currentYear || (expYear === currentYear && expMonth < currentMonth)) {
+            showError('Your card has expired. Please use a different card.');
+            return;
+        }
+        
+       
+        Swal.fire({
+            title: 'Processing Payment',
+            text: 'Please wait while we process your payment...',
+            allowOutsideClick: false,
+            didOpen: () => {
+                Swal.showLoading();
+            }
+        });
+        
+   
+        setTimeout(() => {
+            
+            Swal.fire({
+                icon: 'success',
+                title: 'Payment Successful!',
+                text: `Thank you, ${cardHolder}! Your payment of ₹${totalAmount.toFixed(2)} has been processed successfully.`,
+                confirmButtonText: 'Continue'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                  
+                    localStorage.removeItem('cart');
+                    localStorage.removeItem('checkoutAmount');
+                    
+                
+                    saveOrderHistory(totalAmount, cart);
+                    
+                    // Redirect to order confirmation or home page
+                    window.location.href = '../main/index.html';
+                }
+            });
+        }, 2000);
+    });
+    
 
-document.getElementById("payment-form").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent default form submission
-
-    // Collect form data
-    const cardHolder = document.getElementById("card-holder").value;
-    const cardNumber = document.getElementById("card-number").value;
-    const expiryDate = document.getElementById("expiry-date").value;
-    const cvv = document.getElementById("cvv").value;
-    const amount = document.getElementById("amount").value;
-
-    // Basic validation
-    if (!cardHolder || !cardNumber || !expiryDate || !cvv || !amount) {
-        alert("Please fill out all fields!");
-        return;
+    function showError(message) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: message
+        });
     }
-
-    // Save data to sessionStorage
-    sessionStorage.setItem("paymentDetails", JSON.stringify({
-        cardHolder: cardHolder,
-        cardNumber: cardNumber,
-        amount: amount
-    }));
-})
+    
+   
+    function saveOrderHistory(amount, items) {
+        const orderHistory = JSON.parse(localStorage.getItem('orderHistory') || '[]');
+        
+        const newOrder = {
+            orderId: 'ORD-' + Date.now(),
+            date: new Date().toISOString(),
+            amount: amount,
+            items: items,
+            paymentMethod: 'Credit Card'
+        };
+        
+        orderHistory.push(newOrder);
+        localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
+    }
+});
