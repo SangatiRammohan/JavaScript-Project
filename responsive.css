@@ -273,11 +273,11 @@ header {
 
 .imagesDiv {
     width: 300px;
-    height: 300px;
+    /* height: 300px; */
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #1c2128;
+    background-color:white;
     padding: 20px;
 }
 

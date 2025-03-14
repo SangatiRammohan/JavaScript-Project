@@ -76,7 +76,13 @@ menu.addEventListener('click', () => {
 close.addEventListener('click', () => {
   sidebar.classList.remove('active');
 });
+document.addEventListener('click', (event) => {
+    if (!sidebar.contains(event.target) && !menu.contains(event.target)) {
+      sidebar.classList.remove('active');
+    }
+  });
 
+  
 // Categories dropdown in sidebar
 plusIcon.addEventListener('click', () => {
   sideMiddle2.style.display = sideMiddle2.style.display === 'none' || sideMiddle2.style.display === '' ? 'block' : 'none';
