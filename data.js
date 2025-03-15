@@ -4,7 +4,7 @@ const data = [
         cameras: [
             {
                 "model": "Canon EOS R5",
-                "image_url": "/assests/canon/canon EOS R5.webp",
+                "image_url": "/JavaScript-Project/assests/canon/canon EOS R5.webp",
                 "description": "A professional-grade mirrorless camera with cutting-edge features.",
                 "features": [
                     "45MP Full-Frame CMOS Sensor",
@@ -16,7 +16,7 @@ const data = [
             },
             {
                 "model": "Canon EOS R6",
-                "image_url": "/assests/canon/Canon EOS R6.png",
+                "image_url": "/JavaScript-Project/assests/canon/Canon EOS R6.png",
                 "description": "A versatile mirrorless camera for both photography and videography.",
                 "features": [
                     "20.1MP Full-Frame CMOS Sensor",
@@ -28,7 +28,7 @@ const data = [
             },
             {
                 "model": "Canon EOS 90D",
-                "image_url": "/assests/canon/Canon EOS 90D.jpg",
+                "image_url": "/JavaScript-Project/assests/canon/Canon EOS 90D.jpg",
                 "description": "A DSLR with high resolution and fast autofocus.",
                 "features": [
                     "32.5MP APS-C CMOS Sensor",
@@ -40,7 +40,7 @@ const data = [
             },
             {
                 "model": "Canon EOS Rebel T8i",
-                "image_url": "/assests/canon/Canon EOS Rebel T8i.jpg",
+                "image_url": "/JavaScript-Project/assests/canon/Canon EOS Rebel T8i.jpg",
                 "description": "An entry-level DSLR offering advanced features.",
                 "features": [
                     "24.1MP APS-C CMOS Sensor",
@@ -52,7 +52,7 @@ const data = [
             },
             {
                 "model": "Canon PowerShot G7 X Mark III",
-                "image_url": "/assests/canon/Canon PowerShot G7 X Mark III.jpg",
+                "image_url": "/JavaScript-Project/assests/canon/Canon PowerShot G7 X Mark III.jpg",
                 "description": "A compact camera ideal for vloggers and content creators.",
                 "features": [
                     "20.1MP 1-inch CMOS Sensor",
@@ -64,7 +64,7 @@ const data = [
             },
             {
                 "model": "Canon EOS M50 Mark II",
-                "image_url": "/assests/canon/Canon EOS M50 Mark II.jpg",
+                "image_url": "/JavaScript-Project/assests/canon/Canon EOS M50 Mark II.jpg",
                 "description": "A compact and lightweight mirrorless camera.",
                 "features": [
                     "24.1MP APS-C CMOS Sensor",
@@ -76,7 +76,7 @@ const data = [
             },
             {
                 "model": "Canon EOS-1D X Mark III",
-                "image_url": "/assests/canon/Canon EOS-1D X Mark III.jpg",
+                "image_url": "/JavaScript-Project/assests/canon/Canon EOS-1D X Mark III.jpg",
                 "description": "A flagship DSLR for professional photographers.",
                 "features": [
                     "20.1MP Full-Frame CMOS Sensor",
@@ -88,7 +88,7 @@ const data = [
             },
             {
                 "model": "Canon EOS RP",
-                "image_url": "/assests/canon/Canon EOS RP.jpg",
+                "image_url": "/JavaScript-Project/assests/canon/Canon EOS RP.jpg",
                 "description": "A compact and affordable full-frame mirrorless camera.",
                 "features": [
                     "26.2MP Full-Frame CMOS Sensor",
@@ -100,7 +100,7 @@ const data = [
             },
             {
                 "model": "Canon EOS R3",
-                "image_url": "/assests/canon/Canon EOS R3.webp",
+                "image_url": "/JavaScript-Project/assests/canon/Canon EOS R3.webp",
                 "description": "A high-performance mirrorless camera for professionals.",
                 "features": [
                     "24.1MP Stacked BSI CMOS Sensor",
@@ -112,7 +112,7 @@ const data = [
             },
             {
                 "model": "Canon PowerShot SX70 HS",
-                "image_url": "/assests/canon/Canon PowerShot SX70 HS.jpg",
+                "image_url": "/JavaScript-Project/assests/canon/Canon PowerShot SX70 HS.jpg",
                 "description": "A bridge camera with an ultra-zoom lens.",
                 "features": [
                     "20.3MP CMOS Sensor",
@@ -129,7 +129,7 @@ const data = [
         cameras: [
             {
                 "model": "Nikon Z9",
-                "image_url": "/assests/nikon/Nikon Z9.jpg",
+                "image_url": "/JavaScript-Project/assests/nikon/Nikon Z9.jpg",
                 "description": "A flagship mirrorless camera for professionals.",
                 "features": [
                     "45.7MP Stacked CMOS Sensor",
@@ -141,7 +141,7 @@ const data = [
             },
             {
                 "model": "Nikon D850",
-                "image_url": "/assests/nikon/Nikon D850.png",
+                "image_url": "/JavaScript-Project/assests/nikon/Nikon D850.png",
                 "description": "A full-frame DSLR with exceptional image quality.",
                 "features": [
                     "45.7MP FX-Format CMOS Sensor",
@@ -153,7 +153,7 @@ const data = [
             },
             {
                 "model": "Nikon Z fc",
-                "image_url": "/assests/nikon/Nikon Z fc.png",
+                "image_url": "/JavaScript-Project/assests/nikon/Nikon Z fc.png",
                 "description": "A retro-inspired mirrorless camera with modern performance.",
                 "features": [
                     "20.9MP DX-Format CMOS Sensor",
@@ -165,7 +165,7 @@ const data = [
             },
             {
                 "model": "Nikon Z7 II",
-                "image_url": "/assests/nikon/Nikon Z7 II.jpg",
+                "image_url": "/JavaScript-Project/assests/nikon/Nikon Z7 II.jpg",
                 "description": "A high-resolution mirrorless camera for professionals.",
                 "features": [
                     "45.7MP Full-Frame Sensor",
@@ -177,7 +177,7 @@ const data = [
             },
             {
                 "model": "Nikon Z6 II",
-                "image_url": "/assests/nikon/Nikon Z6 II.webp",
+                "image_url": "/JavaScript-Project/assests/nikon/Nikon Z6 II.webp",
                 "description": "A versatile mirrorless camera with robust features.",
                 "features": [
                     "24.5MP Full-Frame Sensor",
@@ -189,7 +189,7 @@ const data = [
             },
             {
                 "model": "Nikon D780",
-                "image_url": "/assests/nikon/Nikon D780.jpg",
+                "image_url": "/JavaScript-Project/assests/nikon/Nikon D780.jpg",
                 "description": "A full-frame DSLR for hybrid shooters.",
                 "features": [
                     "24.5MP BSI CMOS Sensor",
@@ -201,7 +201,7 @@ const data = [
             },
             {
                 "model": "Nikon COOLPIX P1000",
-                "image_url": "/assests/nikon/Nikon COOLPIX P1000.webp",
+                "image_url": "/JavaScript-Project/assests/nikon/Nikon COOLPIX P1000.webp",
                 "description": "A superzoom bridge camera for distant subjects.",
                 "features": [
                     "16MP CMOS Sensor",
@@ -213,7 +213,7 @@ const data = [
             },
             {
                 "model": "Nikon D5600",
-                "image_url": "/assests/nikon/Nikon D5600.jpg",
+                "image_url": "/JavaScript-Project/assests/nikon/Nikon D5600.jpg",
                 "description": "A compact DSLR for entry-level photographers.",
                 "features": [
                     "24.2MP APS-C CMOS Sensor",
@@ -225,7 +225,7 @@ const data = [
             },
             {
                 "model": "Nikon Z50",
-                "image_url": "/assests/nikon/Nikon Z50.png",
+                "image_url": "/JavaScript-Project/assests/nikon/Nikon Z50.png",
                 "description": "A lightweight DX-format mirrorless camera.",
                 "features": [
                     "20.9MP CMOS Sensor",
@@ -237,7 +237,7 @@ const data = [
             },
             {
                 "model": "Nikon Z5",
-                "image_url": "/assests/nikon/Nikon Z5.webp",
+                "image_url": "/JavaScript-Project/assests/nikon/Nikon Z5.webp",
                 "description": "An affordable entry into full-frame mirrorless photography.",
                 "features": [
                     "24.3MP Full-Frame CMOS Sensor",
@@ -254,7 +254,7 @@ const data = [
         cameras: [
             {
                 "model": "Sony Alpha 7 IV",
-                "image_url": "/assests/sony/Sony Alpha 7 IV.webp",
+                "image_url": "/JavaScript-Project/assests/sony/Sony Alpha 7 IV.webp",
                 "description": "A hybrid mirrorless camera for both photo and video.",
                 "features": [
                     "33MP Full-Frame Exmor R CMOS Sensor",
@@ -266,7 +266,7 @@ const data = [
             },
             {
                 "model": "Sony Alpha 1",
-                "image_url": "/assests/sony/Sony Alpha 1.jpg",
+                "image_url": "/JavaScript-Project/assests/sony/Sony Alpha 1.jpg",
                 "description": "A flagship model with unparalleled speed and resolution.",
                 "features": [
                     "50.1MP Full-Frame Sensor",
@@ -278,7 +278,7 @@ const data = [
             },
             {
                 "model": "Sony ZV-E10",
-                "image_url": "/assests/sony/Sony ZV-E10.jpg",
+                "image_url": "/JavaScript-Project/assests/sony/Sony ZV-E10.jpg",
                 "description": "A compact mirrorless camera designed for vloggers.",
                 "features": [
                     "24.2MP APS-C Exmor CMOS Sensor",
@@ -290,7 +290,7 @@ const data = [
             },
             {
                 "model": "Sony Alpha 7R V",
-                "image_url": "/assests/sony/Sony Alpha 7R V.png",
+                "image_url": "/JavaScript-Project/assests/sony/Sony Alpha 7R V.png",
                 "description": "A high-resolution mirrorless camera with cutting-edge technology.",
                 "features": [
                     "61MP Full-Frame Exmor R CMOS Sensor",
@@ -302,7 +302,7 @@ const data = [
             },
             {
                 "model": "Sony RX100 VII",
-                "image_url": "/assests/sony/Sony RX100 VII.jpg",
+                "image_url": "/JavaScript-Project/assests/sony/Sony RX100 VII.jpg",
                 "description": "A premium compact camera with powerful zoom capabilities.",
                 "features": [
                     "20.1MP 1-inch Exmor RS CMOS Sensor",
@@ -314,7 +314,7 @@ const data = [
             },
             {
                 "model": "Sony FX3",
-                "image_url": "/assests/sony/Sony FX3.jpg",
+                "image_url": "/JavaScript-Project/assests/sony/Sony FX3.jpg",
                 "description": "A compact cinema camera designed for filmmakers.",
                 "features": [
                     "12.1MP Full-Frame Sensor",
@@ -326,7 +326,7 @@ const data = [
             },
             {
                 "model": "Sony Alpha 6400",
-                "image_url": "/assests/sony/Sony Alpha 6400.jpg",
+                "image_url": "/JavaScript-Project/assests/sony/Sony Alpha 6400.jpg",
                 "description": "A versatile APS-C mirrorless camera for creators.",
                 "features": [
                     "24.2MP APS-C CMOS Sensor",
@@ -338,7 +338,7 @@ const data = [
             },
             {
                 "model": "Sony Alpha 9 II",
-                "image_url": "/assests/sony/Sony Alpha 9 II.jpg",
+                "image_url": "/JavaScript-Project/assests/sony/Sony Alpha 9 II.jpg",
                 "description": "A professional sports and action camera with lightning-fast speed.",
                 "features": [
                     "24.2MP Full-Frame Exmor RS CMOS Sensor",
@@ -350,7 +350,7 @@ const data = [
             },
             {
                 "model": "Sony Alpha ZV-1",
-                "image_url": "/assests/sony/Sony Alpha ZV-1.jpg",
+                "image_url": "/JavaScript-Project/assests/sony/Sony Alpha ZV-1.jpg",
                 "description": "A compact vlogging camera with impressive features.",
                 "features": [
                     "20.1MP 1-inch Exmor RS CMOS Sensor",
@@ -362,7 +362,7 @@ const data = [
             },
             {
                 "model": "Sony Alpha 7S III",
-                "image_url": "/assests/sony/Sony Alpha 7S III.jpg",
+                "image_url": "/JavaScript-Project/assests/sony/Sony Alpha 7S III.jpg",
                 "description": "A low-light powerhouse for videographers and filmmakers.",
                 "features": [
                     "12.1MP Full-Frame Sensor",
@@ -379,7 +379,7 @@ const data = [
         cameras: [
             {
                 "model": "Panasonic Lumix GH6",
-                "image_url": "/assests/panasonic/Panasonic Lumix GH6.jpg",
+                "image_url": "/JavaScript-Project/assests/panasonic/Panasonic Lumix GH6.jpg",
                 "description": "A top choice for professional videographers.",
                 "features": [
                     "25.2MP Micro Four Thirds Sensor",
@@ -391,7 +391,7 @@ const data = [
             },
             {
                 "model": "Panasonic Lumix S5 II",
-                "image_url": "/assests/panasonic/Panasonic Lumix S5 II.avif",
+                "image_url": "/JavaScript-Project/assests/panasonic/Panasonic Lumix S5 II.avif",
                 "description": "A lightweight full-frame camera with advanced video features.",
                 "features": [
                     "24.2MP Full-Frame CMOS Sensor",
@@ -403,7 +403,7 @@ const data = [
             },
             {
                 "model": "Panasonic Lumix G100",
-                "image_url": "/assests/panasonic/Panasonic Lumix G100.jpg",
+                "image_url": "/JavaScript-Project/assests/panasonic/Panasonic Lumix G100.jpg",
                 "description": "A vlogger-friendly camera with advanced audio features.",
                 "features": [
                     "20.3MP Micro Four Thirds Sensor",
@@ -415,7 +415,7 @@ const data = [
             },
             {
                 "model": "Panasonic Lumix S1H",
-                "image_url": "/assests/panasonic/Panasonic Lumix S1H.jpg",
+                "image_url": "/JavaScript-Project/assests/panasonic/Panasonic Lumix S1H.jpg",
                 "description": "A cinema-quality full-frame camera for filmmakers.",
                 "features": [
                     "24.2MP Full-Frame Sensor",
@@ -427,7 +427,7 @@ const data = [
             },
             {
                 "model": "Panasonic Lumix GX9",
-                "image_url": "/assests/panasonic/Panasonic Lumix GX9.jpg",
+                "image_url": "/JavaScript-Project/assests/panasonic/Panasonic Lumix GX9.jpg",
                 "description": "A compact mirrorless camera for travel photographers.",
                 "features": [
                     "20.3MP Micro Four Thirds Sensor",
@@ -439,7 +439,7 @@ const data = [
             },
             {
                 "model": "Panasonic Lumix FZ1000 II",
-                "image_url": "/assests/panasonic/Panasonic Lumix FZ1000 II.jpg",
+                "image_url": "/JavaScript-Project/assests/panasonic/Panasonic Lumix FZ1000 II.jpg",
                 "description": "A versatile bridge camera with a large sensor and powerful zoom.",
                 "features": [
                     "20.1MP 1-inch Sensor",
@@ -451,7 +451,7 @@ const data = [
             },
             {
                 "model": "Panasonic Lumix S1",
-                "image_url": "/assests/panasonic/Panasonic Lumix S1.avif",
+                "image_url": "/JavaScript-Project/assests/panasonic/Panasonic Lumix S1.avif",
                 "description": "A robust full-frame mirrorless camera for professionals.",
                 "features": [
                     "24.2MP Full-Frame CMOS Sensor",
@@ -463,7 +463,7 @@ const data = [
             },
             {
                 "model": "Panasonic Lumix LX100 II",
-                "image_url": "/assests/panasonic/Panasonic Lumix LX100 II.jpg",
+                "image_url": "/JavaScript-Project/assests/panasonic/Panasonic Lumix LX100 II.jpg",
                 "description": "A premium compact camera with a large sensor.",
                 "features": [
                     "17MP Four Thirds Sensor",
@@ -475,7 +475,7 @@ const data = [
             },
             {
                 "model": "Panasonic Lumix G95",
-                "image_url": "/assests/panasonic/Panasonic Lumix G95.jpg",
+                "image_url": "/JavaScript-Project/assests/panasonic/Panasonic Lumix G95.jpg",
                 "description": "A rugged mirrorless camera for outdoor photography.",
                 "features": [
                     "20.3MP Micro Four Thirds Sensor",
@@ -487,7 +487,7 @@ const data = [
             },
             {
                 "model": "Panasonic Lumix ZS200",
-                "image_url": "/assests/panasonic/Panasonic Lumix ZS200.avif",
+                "image_url": "/JavaScript-Project/assests/panasonic/Panasonic Lumix ZS200.avif",
                 "description": "A compact travel zoom camera with a large sensor.",
                 "features": [
                     "20.1MP 1-inch Sensor",
